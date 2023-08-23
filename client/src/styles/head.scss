@@ -1,0 +1,41 @@
+#head{
+    display: flex;
+    background-color: #fff;
+    border-bottom:1px solid rgba(0,0,0,0.14);
+
+    #logo-container{
+    display:flex;
+    align-content:center;
+    height:53px;
+
+    a{
+      display:flex;
+      align-content:center;
+
+      img{
+        width:9em;
+        padding: 0 0 0 10px;
+        object-fit: contain;
+        }
+      }
+    }
+
+    #telephone-container{
+      display:flex;
+      align-items:center;
+      justify-content:right;
+      height:53px;
+      font-size:15px;
+
+    a{
+      font-weight:500;
+      font-size: 1em;
+      color: rgba(0, 0, 0, 0.9);
+      text-decoration:none;
+      padding: 0 10px 0 0;
+    }
+  }
+}
+
+
+
