@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../styles/food_categories.scss';
 import { Link  } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ function FoodCategories(){
               </Link>
           </div>
           <div className={'col-6 '}>
-              <Link to={"/sets"}
+              <Link to={"/roll_sets"}
                     state={{path:'/sets'}}>
                   <img src={'https://pandabanda.city/upload/resize_cache/iblock/a3e/255_140_2/a3e2cb6206e60c9c7d783ff39e4e03db.JPG'} alt={'sets'} />
                   <span>Сети</span>
@@ -42,8 +42,8 @@ function FoodCategories(){
               </Link>
           </div>
           <div className={'col-6 '}>
-              <Link to={"/noodles"}
-                    state={{path:'/noodles'}}>
+              <Link to={"/wok"}
+                    state={{path:'/wok'}}>
                   <img src={'https://pandabanda.city/upload/resize_cache/iblock/668/255_140_2/668ec1e1902b12605e9fa5304f7a9b8c.jpg'} alt={'wok'} />
                   <span>WOK/Локшина</span>
               </Link>
