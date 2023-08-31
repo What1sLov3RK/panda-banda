@@ -29,7 +29,7 @@ const insert_data_in_db = async function (collection, name_set, price_set, ingri
   try {
     await client.connect();
     const pizza = db.collection(collection);
-    let new_pizza = { name: name_set, price: price_set, ingridients: ingridients_set, weight:weight_set, amount:amount_set, discount:discount_set, image_path:image_path_set };
+    let new_pizza = { name: name_set,type: collection, price: price_set, ingridients: ingridients_set, weight:weight_set, amount:amount_set, discount:discount_set, image_path:image_path_set };
     await pizza.insertOne(new_pizza);
   } catch (e) {
     console.error(e);

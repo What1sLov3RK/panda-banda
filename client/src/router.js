@@ -2,8 +2,8 @@ import React from 'react';
 import MainPage from './pages/MainPage';
 import Catalogue from "./pages/Catalogue";
 import Delivery from "./pages/Delivery";
-import {createBrowserRouter} from "react-router-dom";
-
+import { createBrowserRouter } from "react-router-dom";
+import ProductPage from "./pages/ProductPage";
 
 const router = createBrowserRouter(
 [
@@ -16,37 +16,41 @@ const router = createBrowserRouter(
     element: <Delivery />,
   },
   {
-    path: "/rolls",
+    path: "/catalogue/rolls",
     element: <Catalogue />,
   },
   {
-    path: "/roll_sets",
+    path: "/catalogue/roll_sets",
     element: <Catalogue />,
   },
   {
-    path: "/pizza",
+    path: "/catalogue/pizza",
     element: <Catalogue />,
   },
   {
-    path: "/drinks",
+    path: "/catalogue/drinks",
     element: <Catalogue />,
   },
   {
-    path: "/snacks",
+    path: "/catalogue/snacks",
     element:<Catalogue />,
   },
   {
-    path: "/soups",
+    path: "/catalogue/soups",
     element:<Catalogue />,
   },
   {
-    path: "/wok",
+    path: "/catalogue/wok",
     element:<Catalogue />,
   },
   {
-    path: "/other",
+    path: "/catalogue/other",
     element:<Catalogue />,
   },
+  {
+    path: "/catalogue/:type/:name",
+    element: <ProductPage />,
+  }
 ]);
 
 export default router

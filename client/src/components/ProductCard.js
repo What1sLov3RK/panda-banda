@@ -1,11 +1,16 @@
 import React from 'react';
 import '../styles/product_card.scss';
+import {Link} from "react-router-dom";
 
 function ProductCard({ data }) {
   return (
-
       <div id={'product-card-container'} className={'col-12'}>
+
         {data && data.map((item, index) => (
+            <Link to={'/catalogue/' + item.type+'/'+item.name}
+                  state={{item}}
+                  key={index}
+            >
             <div id={'product-card'} key={index}>
               {item.discount > 0 && <span className={'discount-product'}>%</span>}
               <img
@@ -42,7 +47,9 @@ function ProductCard({ data }) {
             </span>
               </div>
             </div>
+            </Link>
         ))}
+
       </div>
   );
 }

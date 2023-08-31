@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React from 'react';
 import '../styles/head.scss';
-import { Link } from 'react-router-dom';
+
 function Head(){
-    const [backendData, setBackendData] = useState([{'test':'1'}])
         return(
       <div id='head' className='col-12'>
           <div id='logo-container' className='col-6' >

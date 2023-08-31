@@ -19,7 +19,7 @@ app.get("/api", (req, res) => {
 });
 
 
-app.get("/rolls",(req,res)=>{
+app.get("/catalogue/rolls",(req,res)=>{
     get_all_collection_objects('rolls')
         .then(objects => {
             res.json({ objects });
@@ -30,7 +30,7 @@ app.get("/rolls",(req,res)=>{
         });
 });
 
-app.get("/pizza",(req,res)=>{
+app.get("/catalogue/pizza",(req,res)=>{
     get_all_collection_objects('pizza')
         .then(objects => {
             res.json({ objects });
@@ -42,7 +42,7 @@ app.get("/pizza",(req,res)=>{
 
 });
 
-app.get("/drinks",(req,res)=>{
+app.get("/catalogue/drinks",(req,res)=>{
     get_all_collection_objects('drinks')
         .then(objects => {
             res.json({ objects });
@@ -54,7 +54,7 @@ app.get("/drinks",(req,res)=>{
 
 });
 
-app.get("/snacks",(req,res)=>{
+app.get("/catalogue/snacks",(req,res)=>{
     get_all_collection_objects('snacks')
         .then(objects => {
             res.json({ objects });
@@ -66,7 +66,7 @@ app.get("/snacks",(req,res)=>{
 
 });
 
-app.get("/soups",(req,res)=>{
+app.get("/catalogue/soups",(req,res)=>{
     get_all_collection_objects('soups')
         .then(objects => {
             res.json({ objects });
@@ -78,7 +78,7 @@ app.get("/soups",(req,res)=>{
 
 });
 
-app.get("/rolls_sets",(req,res)=>{
+app.get("/catalogue/rolls_sets",(req,res)=>{
     get_all_collection_objects('roll sets')
         .then(objects => {
             res.json({ objects });
@@ -89,7 +89,7 @@ app.get("/rolls_sets",(req,res)=>{
         });
 });
 
-app.get("/wok",(req,res)=>{
+app.get("/catalogue/wok",(req,res)=>{
     get_all_collection_objects('wok')
         .then(objects => {
             res.json({ objects });
@@ -102,9 +102,20 @@ app.get("/wok",(req,res)=>{
 });
 
 
-
-
-
-
 app.listen(PORT, ()=> console.log("Server started!"));
+
+//Caching
+app.use(express.static('../client/components/FoodCategories.js', {
+  maxAge: '10m',
+}));
+
+app.use(express.static('../client/styles', {
+  maxAge: '10m',
+}));
+
+app.use(express.static('../client/pages/MainPage.js', {
+  maxAge: '10m',
+}));
+
+
 
